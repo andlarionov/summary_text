@@ -5,20 +5,20 @@ from transformers import pipeline
 summarizer = pipeline("summarization", model="Falconsai/text_summarization")
 
 def main():
-    st.title("Приложение для суммаризации текста")
+    st.title("Text Summarization App for Russian-Speaking Users")
 
     # Ввод текста от пользователя
-    user_input = st.text_area("Введите текст для суммаризации:")
+    user_input = st.text_area("Enter the text for summarization:")
 
     # Проверка, что пользователь ввел текст
-    if st.button("Суммаризировать"):
+    if st.button("Summarize"):
         if user_input:
             # Получение суммаризации
             summary = generate_summary(user_input)
-            st.subheader("Результат:")
+            st.subheader("Result:")
             st.write(summary)
         else:
-            st.warning("Введите текст для суммаризации.")
+            st.warning("Enter the text for summarization.")
 
 def generate_summary(text):
     # Генерация суммаризации
