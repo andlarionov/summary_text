@@ -1,5 +1,6 @@
 import streamlit as st
 from transformers import pipeline
+import tensorflow as tf
 
 # Загрузка модели для суммаризации
 summarizer = pipeline("summarization", model="Falconsai/text_summarization")
